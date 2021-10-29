@@ -7,13 +7,14 @@ import {
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import { MvbAppApiModule } from './mvb-app-api/src/mvb-app-api.module';
 import { AppModule } from './mvb-core-api/src/app.module';
+import { UserModule } from './mvb-app-api/src/module/user/user.module';
 
 @Module({
   imports: [MvbAppApiModule, AppModule],
   controllers: [],
   providers: [],
 })
-class AllApiModule {}
+class AllApiModule { }
 
 async function bootstrap() {
   const app = await NestFactory.create<NestFastifyApplication>(
@@ -27,7 +28,7 @@ async function bootstrap() {
     .setBasePath('')
     .build();
   const document = SwaggerModule.createDocument(app, config, {
-    include: [MvbAppApiModule],
+    include: [MvbAppApiModule, UserModule],
   });
   console.log(JSON.stringify(document));
   SwaggerModule.setup('/api-docs', app, document, {

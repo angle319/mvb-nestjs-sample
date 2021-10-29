@@ -23,5 +23,6 @@ import { SequelizeModule } from '@nestjs/sequelize';
   // ],
   controllers: [MvbAppApiController],
   providers: [MvbAppApiService],
+  exports: [UserModule],
 })
-export class MvbAppApiModule {}
+export class MvbAppApiModule { }

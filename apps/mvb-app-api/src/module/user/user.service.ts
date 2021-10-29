@@ -10,16 +10,14 @@ export class UserService {
     @InjectModel(account)
     @InjectModel(accountSetting)
     private readonly userModel: typeof account,
-  ) {
-    this.userModel.findOne().then(console.log)
-  }
+  ) {}
 
   async create(createUserDto: CreateUserDto) {
     return await this.userModel.create(createUserDto);
   }
 
   findAll() {
-    console.log(this.userModel.prototype)
+    console.log(this.userModel.prototype);
     return this.userModel.findAll();
   }
 
