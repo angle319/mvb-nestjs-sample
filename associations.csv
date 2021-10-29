@@ -1,0 +1,2 @@
+1:1, id, account_id, account, account_setting
+N:N, id, key, host, service, host_service_rt

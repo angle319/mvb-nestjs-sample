@@ -1,0 +1,30 @@
+{
+  "collection": "@nestjs/schematics",
+  "sourceRoot": "apps",
+  "monorepo": true,
+  "root": "apps",
+  "compilerOptions": {
+    "webpack": true,
+    "tsConfigPath": "apps/tsconfig.app.json"
+  },
+  "projects": {
+    "mvb-core-api": {
+      "type": "application",
+      "root": "apps/mvb-core-api",
+      "entryFile": "main",
+      "sourceRoot": "apps/mvb-core-api/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/mvb-core-api/tsconfig.app.json"
+      }
+    },
+    "mvb-app-api": {
+      "type": "application",
+      "root": "apps/mvb-app-api",
+      "entryFile": "main",
+      "sourceRoot": "apps/mvb-app-api/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/mvb-app-api/tsconfig.app.json"
+      }
+    }
+  }
+}
